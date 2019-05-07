@@ -19,7 +19,7 @@
 # Boston, MA 02110-1301, USA.
 
 install(FILES
-    framers_gr_hdlc_framer_b.xml
-    framers_gr_hdlc_deframer_b.xml
-    framers_gr_hdlc_framer_2_channel_b.xml DESTINATION share/gnuradio/grc/blocks
+    framers_gr_hdlc_framer_b.block.yml
+    framers_gr_hdlc_deframer_b.block.yml
+    framers_gr_hdlc_framer_2_channel_b.block.yml DESTINATION share/gnuradio/grc/blocks
 )
