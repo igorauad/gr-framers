@@ -24,7 +24,7 @@
 #include <queue>
 
 #include <framers/gr_hdlc_framer_2_channel_b.h>
-#include <hdlc_framer.h>
+#include "hdlc_framer.h"
 
 using std::queue;
 namespace gr {

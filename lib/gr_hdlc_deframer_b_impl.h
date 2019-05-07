@@ -1,7 +1,7 @@
 #ifndef INCLUDED_FRAMERS_GR_HDLC_DEFRAMER_B_IMPL_H
 #define INCLUDED_FRAMERS_GR_HDLC_DEFRAMER_B_IMPL_H
 
-#include <hdlc_deframer.h>
+#include "hdlc_deframer.h"
 #include <framers/gr_hdlc_deframer_b.h>
 
 namespace gr {

@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include <hdlc_framer.h>
-#include <hdlc_deframer.h>
+#include "../lib/hdlc_framer.h"
+#include "../lib/hdlc_deframer.h"
 #define DATA_SIZE 100
 
 
