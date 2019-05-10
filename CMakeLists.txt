@@ -31,6 +31,12 @@ if(DEFINED ENV{PYBOMBS_PREFIX})
     message(STATUS "PyBOMBS installed GNU Radio. Setting CMAKE_INSTALL_PREFIX to $ENV{PYBOMBS_PREFIX}")
 endif()
 
+# Get GNU Radio Installation Prefix
+if(DEFINED CMAKE_INSTALL_PREFIX)
+    set(GR_PREFIX ${CMAKE_INSTALL_PREFIX})
+    message(STATUS "Installation is located at: ${GR_PREFIX}")
+endif()
+
 #select the release build type by default to get optimization flags
 if(NOT CMAKE_BUILD_TYPE)
    set(CMAKE_BUILD_TYPE "Release")
@@ -122,6 +128,15 @@ endif(APPLE)
 # Find gnuradio build dependencies
 ########################################################################
 find_package(Doxygen)
+
+find_package(gnuradio-blocks PATHS ${GR_PREFIX}/lib/cmake/gnuradio/)
+message(STATUS "Found gnuradio-blocks: ${gnuradio-blocks_FOUND}")
+
+find_package(gnuradio-pmt PATHS ${GR_PREFIX}/lib/cmake/gnuradio/)
+message(STATUS "Found gnuradio-pmt: ${gnuradio-pmt_FOUND}")
+
+find_package(gnuradio-runtime PATHS ${GR_PREFIX}/lib/cmake/gnuradio/)
+message(STATUS "Found gnuradio-runtime: ${gnuradio-runtime_FOUND}")
 
 ########################################################################
 # Setup doxygen option

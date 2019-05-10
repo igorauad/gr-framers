@@ -37,8 +37,14 @@ if(NOT framers_sources)
     return()
 endif(NOT framers_sources)
 
+list(APPEND required_gr_libs
+    gnuradio::gnuradio-runtime
+    gnuradio::gnuradio-blocks
+    gnuradio::gnuradio-pmt
+)
+
 add_library(gnuradio-framers SHARED ${framers_sources})
-target_link_libraries(gnuradio-framers gnuradio::gnuradio-runtime)
+target_link_libraries(gnuradio-framers ${required_gr_libs})
 target_include_directories(gnuradio-framers
     PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../include>
     PUBLIC $<INSTALL_INTERFACE:include>
